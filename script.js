@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let playerAttackDamage = 0;
     let numHealthPots = 3;
     const healAmount = 25;
-    const potionDropChance = 25; // percentage
+    const potionDropChance = 35; // percentage
 
     let playerWeapon;
     let attackType = "";
@@ -179,9 +179,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function endGame() {
-        displayMessage("-------------------------------------------------------------------------");
+        displayMessage("------------------------------------------------------------");
         displayMessage("| Your journey has now come to an end. Thanks for playing! |");
-        displayMessage("-------------------------------------------------------------------------");
+        displayMessage("------------------------------------------------------------");
     }
 
 
