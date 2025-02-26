@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleUserInput(choice) {
         switch (choice) {
             case "1":
+                displayMessage("You have chosen to attack!");
                 damageDealt = Math.floor(Math.random() * (playerAttackDamage - (playerAttackDamage / 3)) + playerAttackDamage / 3);
                 damageTaken = Math.floor(Math.random() * (enemyAttackDamage - 5)) + 5;
                 enemyHealth -= damageDealt;
@@ -126,9 +127,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     displayMessage(`Your HP: ${health}`);
                     displayMessage(`${enemy}'s HP: ${enemyHealth}`);
                     displayMessage("What would you like to do?<br>1. attack<br>2. drink health potion<br>3. run away and cry");
+                    displayMessage("-------------------------------");
                 }
                 break;
             case "2":
+                displayMessage("You have chosen to drink a health potion!");
                 if (numHealthPots > 0) {
                     const oldHealth = health;
                     health += healAmount;
@@ -146,8 +149,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 displayMessage(`Your HP: ${health}`);
                 displayMessage(`${enemy}'s HP: ${enemyHealth}`);
                 displayMessage("What would you like to do?<br>1. attack<br>2. drink health potion<br>3. run away and cry");
+                displayMessage("-------------------------------");
                 break;
             case "3":
+                displayMessage("You have chosen to run away!");
                 displayMessage(`> You run away from the ${enemy}! Your journey is over and you flee the dungeon in shame.`);
                 endGame();
                 break;
@@ -174,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
         displayMessage(`Your HP: ${health}`);
         displayMessage(`${enemy}'s HP: ${enemyHealth}`);
         displayMessage("What would you like to do?<br>1. attack<br>2. drink health potion<br>3. run away and cry");
+        displayMessage("-------------------------------");
         submitButton.removeEventListener("click", handleWeaponChoiceInput);
         submitButton.addEventListener("click", handleGameInput);
     }
